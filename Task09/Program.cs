@@ -15,3 +15,6 @@ if (firstDigit > secondDigit)
  Console.WriteLine($"Please note that the first digit {firstDigit} in the number {number} is greater then the second one {secondDigit}");   
 else
  Console.WriteLine($"Please note that the second digit {secondDigit} in the number {number} is greater then the second one {firstDigit}");  
+
+int maxDigit  = firstDigit > secondDigit ? firstDigit : secondDigit;
+Console.WriteLine($"Max digit is {maxDigit}");
