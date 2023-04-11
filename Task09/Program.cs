@@ -16,5 +16,5 @@ if (firstDigit > secondDigit)
 else
  Console.WriteLine($"Please note that the second digit {secondDigit} in the number {number} is greater then the second one {firstDigit}");  
 
-int maxDigit  = firstDigit > secondDigit ? firstDigit : secondDigit;
+int maxDigit  = firstDigit > secondDigit ? firstDigit : secondDigit; //тернарный оператор
 Console.WriteLine($"Max digit is {maxDigit}");
