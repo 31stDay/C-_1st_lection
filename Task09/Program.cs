@@ -11,10 +11,21 @@ Console.WriteLine($"Random number from range 10 - 99 -> {number}");
 int firstDigit = number / 10;
 int secondDigit = number % 10;
 
-if (firstDigit > secondDigit)
- Console.WriteLine($"Please note that the first digit {firstDigit} in the number {number} is greater then the second one {secondDigit}");   
-else
- Console.WriteLine($"Please note that the second digit {secondDigit} in the number {number} is greater then the second one {firstDigit}");  
+// if (firstDigit > secondDigit)
+//  Console.WriteLine($"Please note that the first digit {firstDigit} in the number {number} is greater then the second one {secondDigit}");   
+// else
+//  Console.WriteLine($"Please note that the second digit {secondDigit} in the number {number} is greater then the second one {firstDigit}");  
 
-int maxDigit  = firstDigit > secondDigit ? firstDigit : secondDigit; //тернарный оператор
-Console.WriteLine($"Max digit is {maxDigit}");
+// int maxDigit  = firstDigit > secondDigit ? firstDigit : secondDigit; //тернарный оператор 
+// Console.WriteLine($"Max digit is {maxDigit}"); 
+
+int maxDigit = MaxDigit(number);
+
+int MaxDigit(int num) // num = number
+{
+  int firstDigit = number / 10;
+  int secondDigit = number % 10;
+  int maxDigit  = firstDigit > secondDigit ? firstDigit : secondDigit;
+  return maxDigit;
+}
+Console.WriteLine($"Max digit is {maxDigit}"); 
