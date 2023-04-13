@@ -17,4 +17,4 @@ int DeleteMid(int num)
 }
 int midNumber = DeleteMid(number);
 
-Console.WriteLine($"two-digit number is {midNumber}");
+Console.WriteLine($"The new two-digit number is {midNumber}");
