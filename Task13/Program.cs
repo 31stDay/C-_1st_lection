@@ -22,5 +22,5 @@ if (number >= 100)
    Console.WriteLine($"The third digit of your number{number} is {thirdDigit}");
 } 
 else
-    Console.WriteLine("Your number contains less than three digits.");
+    Console.WriteLine("Your number contains less than three digits");
 
