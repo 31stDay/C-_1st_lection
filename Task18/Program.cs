@@ -21,17 +21,3 @@ Console.WriteLine(range == null
 
 
 
-// Console.WriteLine("Введите номер четверти: ");
-// int numberQuater = Convert.ToInt32(Console.ReadLine());
-
-// string coordinate = Coordinate(numberQuater);
-// Console.WriteLine(coordinate == null ? "неправильный номер четверти" : coordinate); // тернарный оператор
-
-// string Coordinate(int num)
-// {
-//     if(num == 1) return "x > 0, y > 0";
-//     if(num == 2) return "x < 0, y > 0";
-//     if(num == 3) return "x < 0, y < 0";
-//     if(num == 4) return "x > 0, y < 0";
-//     return null;
-// }
