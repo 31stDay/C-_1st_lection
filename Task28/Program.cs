@@ -11,7 +11,7 @@ int ProductOfNumbers(int num)
     {
         checked
         {
-            prod = prod * i;
+            prod *= i;
         }
     }
     return prod;
