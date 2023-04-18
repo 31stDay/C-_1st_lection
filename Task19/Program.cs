@@ -9,7 +9,10 @@
 Console.WriteLine("Please enter five-digit number: ");
 Convert.ToInt32(Console.ReadLine());
 
-int Promt
+int Promt()
+{
+    ;
+}
 
 
 bool CheckTheNumber(int num)
