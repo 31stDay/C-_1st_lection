@@ -6,18 +6,21 @@
 // 8 -> 36
 
 
-int SumNumbers(int num)   
+long SumNumbers(long num)
 {
-    int sum = 0;
+    long sum = 0;
     for (int i = 1; i <= num; i++)
     {
-        sum = sum + i;
+        checked
+        {
+            sum = sum + i;
+        }
     }
     return sum;
 }
 
 Console.WriteLine("Please enter your positive integer number: ");
-int number = Convert.ToInt32(Console.ReadLine());
+long number = Convert.ToInt64(Console.ReadLine());
 
-int sumNumber = SumNumbers(number);
- Console.WriteLine($"Sum  of numbers from 1 to {number} = {sumNumber}");
+long sumNumber = SumNumbers(number);
+Console.WriteLine($"Sum  of numbers from 1 to {number} = {sumNumber}");
