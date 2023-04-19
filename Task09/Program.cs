@@ -19,8 +19,6 @@ int secondDigit = number % 10;
 // int maxDigit  = firstDigit > secondDigit ? firstDigit : secondDigit; //тернарный оператор 
 // Console.WriteLine($"Max digit is {maxDigit}"); 
 
-int maxDigit = MaxDigit(number);
-
 int MaxDigit(int num) // num = number
 {
   int firstDigit = number / 10;
@@ -28,4 +26,6 @@ int MaxDigit(int num) // num = number
   int maxDigit  = firstDigit > secondDigit ? firstDigit : secondDigit;
   return maxDigit;
 }
+
+int maxDigit = MaxDigit(number);
 Console.WriteLine($"Max digit is {maxDigit}"); 

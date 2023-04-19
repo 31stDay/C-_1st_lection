@@ -40,7 +40,7 @@ bool CheckPalindrome(int numb)
     }
     if (revNumb == numb)
     {
-        Console.WriteLine("Your number is a palendrome");
+        Console.WriteLine("Your number is a palindrome");
         return true;
     }
     Console.WriteLine("Your number isn't a palendrome");
