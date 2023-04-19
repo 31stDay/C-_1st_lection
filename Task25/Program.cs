@@ -5,12 +5,12 @@
 
 int RaisingToAPower(int a, int b)
 {
-    int power = a;
+    int result = a;
     for (int i = 1; i < b; i++)
     {
-        power = power * a;
+        result = result * a;
     }
-    return power;
+    return result;
 }
 
 Console.WriteLine("Please enter the first positive integer number: ");
