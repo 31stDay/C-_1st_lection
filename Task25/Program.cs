@@ -2,3 +2,21 @@
 // и возводит число A в натуральную степень B.
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
+
+int RaisingToAPower(int a, int b)
+{
+    int power = a;
+    for (int i = 1; i < b; i++)
+    {
+        power = power * a;
+    }
+    return power;
+}
+
+Console.WriteLine("Please enter the first positive integer number: ");
+int aNumber = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Please enter the second positive integer number: ");
+int bNumber = Convert.ToInt32(Console.ReadLine());
+
+int raisingToAPower = RaisingToAPower(aNumber, bNumber);
+Console.WriteLine($"{aNumber} raised to the power of {bNumber} is {raisingToAPower}");
