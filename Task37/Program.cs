@@ -29,7 +29,7 @@ void PrintArray(int[] arr)
 int[] CreateNewArray(int[] arr)
 {
 
-    int length = arr.Length / 2;
+    int length = arr.Length / 2; // new array length
     if (arr.Length % 2 == 1) length += 1;
 
     int[] newArr = new int[length];

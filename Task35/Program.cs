@@ -40,8 +40,6 @@ int CountElements(int[] arr)
     return counter;
 }
 
-
-
 int[] array = CreateArrayRndInt(123, 1, 200);
 Console.Write("[");
 PrintArray(array);

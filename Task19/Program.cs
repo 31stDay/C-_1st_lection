@@ -48,7 +48,15 @@ bool CheckPalindrome(int numb)
 }
 
 int number = Promt("Please enter five-digit number: ");
+if (number < 0) number= -number;
 if (CheckNumberLength(number))
 {
     Console.WriteLine(CheckPalindrome(number));
 }
+
+
+// bool PalindromeCheck(int num)
+// {
+//     return (num/10000 == num%10) && (num/1000 == num % 100 );
+// }
+
