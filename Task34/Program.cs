@@ -24,14 +24,22 @@ void PrintArray(int[] arr)
     }
 }
 
+int CountPositiveNumbers(int[] arr)
+{
+    int count = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+      if (arr[i]%2 == 0) count = count + 1;
+    }
+    return count;
+}
 
 
-int[] array = CreateArrayRndInt(5, -9, 9);
+int[] array = CreateArrayRndInt(10, 100, 999);
 Console.Write("[");
 PrintArray(array);
-Console.Write("]");
-InverseArray(array);
-Console.WriteLine();
-Console.Write("[");
-PrintArray(array);
-Console.Write("]");
+Console.Write("] -> ");
+int counter = CountPositiveNumbers(array);
+Console.WriteLine($"There are {counter} even numbers in your array");
+
+
