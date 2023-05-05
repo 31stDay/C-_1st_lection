@@ -56,7 +56,7 @@ double[] ArrayFromAverage(int[,] matrix)
 
 void PrintArray(double[] array)
 {
-    Console.Write("Average of every column: ");
+    Console.Write("Array from average of every column: ");
     for (int i = 0; i < array.Length; i++)
     {
         if (i < array.Length - 1) Console.Write($"{Math.Round(array[i], 1),2}; ");
