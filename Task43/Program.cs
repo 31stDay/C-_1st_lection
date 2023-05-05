@@ -23,7 +23,6 @@ void CheckLines(int b1, int k1, int b2, int k2)
     }
 }
 
-
 Console.WriteLine($"Please enter b1: ");
 int varB1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine($"Please enter k1: ");
