@@ -37,26 +37,12 @@ void PrintMatrix(int[,] matrix)
 void CheckElement(int[,] matrix, int elRow, int elCol)
 {
 
-    if (elRow > matrix.GetLength(0) - 1 || elCol > matrix.GetLength(1) - 1) 
+    if (elRow > matrix.GetLength(0) - 1 || elCol > matrix.GetLength(1) - 1 || elRow < 0 || elCol < 0)
     {
         Console.WriteLine("There is no such element in the matrix");
     }
     else Console.WriteLine($"Your element is: {matrix[elRow, elCol]}");
 }
-
-// void CheckElement(int[,] matrix, int elRow, int elCol)
-// {
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         if (i == elRow)
-//         {
-//             for (int j = 0; j < matrix.GetLength(1); j++)
-//             {
-//                 if (j == elCol) Console.WriteLine($"{matrix[i, j]}");             
-//             }
-//         }       
-//     }
-// }
 
 Console.WriteLine("Please enter element position in row: ");
 int elementRow = Convert.ToInt32(Console.ReadLine());
