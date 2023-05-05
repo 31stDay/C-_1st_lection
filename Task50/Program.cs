@@ -44,10 +44,9 @@ void CheckElement(int[,] matrix, int elRow, int elCol)
         {
             for (int j = 0; j < matrix.GetLength(1); j++)
             {
-                if (j == elCol) Console.WriteLine($"{matrix[i, j]}");
-              
+                if (j == elCol) Console.WriteLine($"{matrix[i, j]}");             
             }
-        }
+        }       
     }
 }
 

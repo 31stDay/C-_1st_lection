@@ -3,29 +3,26 @@
 // значения b1, k1, b2 и k2 задаются пользователем.
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
-bool CheckLines(int b1, int k1, int b2, int k2)
+void CheckLines(int b1, int k1, int b2, int k2)
 {
-    if ((k1 == k2) && (b1 == b2))
+    double x = 0;
+    double y = 0;
+    if (k1 == k2 && b1 == b2)
     {
-        Console.Write("Прямые совпадают");
-        return false;
+        Console.Write("Lines coincide");
     }
-    if (k1 == k2)
+    else if (k1 == k2)
     {
-        Console.Write("Прямые параллельны");
-        return false;
+        Console.Write("Lines are parallel");
     }
-    else return true;
+    else
+    {
+        x = (b2 - b1) / (k1 - k2);
+        y = (k1 * (b2 - b1)) / (k1 - k2) + b1;
+        Console.WriteLine($" Coordinates of the point of intersection of two lines are x= {Math.Round(x, 2)} y= {Math.Round(y, 2)}");
+    }
 }
 
-
-double FindCoordinates(int b1, int k1, int b2, int k2)
-{
-
-    double x = (b2 - b1) / (k1 - k2);
-    double y = (k1 * (b2 - b1)) / (k1 - k2) + b1;
-    Console.WriteLine($"x= {Math.Round(x, 2)} y= {Math.Round(y, 2)}");
-}
 
 Console.WriteLine($"Please enter b1: ");
 int varB1 = Convert.ToInt32(Console.ReadLine());
@@ -37,4 +34,5 @@ Console.WriteLine($"Please enter k2: ");
 int varK2 = Convert.ToInt32(Console.ReadLine());
 
 
+CheckLines(varB1, varK1, varB2, varK2);
 

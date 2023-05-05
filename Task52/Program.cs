@@ -69,4 +69,3 @@ int[,] matr = CreateMatrix(3, 4, 1, 10);
 PrintMatrix(matr);
 double[] arr = ArrayFromAverage(matr);
 PrintArray(arr);
-
