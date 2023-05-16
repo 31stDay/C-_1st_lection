@@ -37,18 +37,14 @@ void PrintMatrix(int[,] matrix)
 double[] ArrayFromAverage(int[,] matrix)
 {
     double[] array = new double[matrix.GetLength(1)];
-    int k = 0;
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
         double sum = 0;
-        int counter = 0;
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
             sum = sum + matrix[i, j];
-            counter = counter + 1;
         }
-        array[k] = sum / counter;
-        k = k + 1;
+        array[j] = sum / matrix.GetLength(0);
     }
     return array;
 }
