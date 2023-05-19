@@ -2,62 +2,79 @@
 // максимальным и минимальным элементов массива.
 // [3.5, 7.1, 22.9, 2.3, 78.5] -> 76.2
 
-
-double[] CreateArrayRnd(int size, int min, int max)
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
-double[] arr = new double[size];
-Random rnd = new Random();
-for (int i = 0; i < arr.Length; i++)
-{
-    arr[i] = rnd.NextDouble() * (max - min) + min;
+   int[,] matrix = new int[rows, columns];
+   Random rnd = new Random();
+
+   for (int i = 0; i < matrix.GetLength(0); i++)
+   {
+      for (int j = 0; j < matrix.GetLength(1); j++)
+      {
+         matrix[i, j] = rnd.Next(min, max + 1);
+      }
+   }
+   return matrix;
 }
-return arr;
+void PrintMatrix(int[,] matrix)
+{
+   for (int i = 0; i < matrix.GetLength(0); i++)
+   {
+      for (int j = 0; j < matrix.GetLength(1); j++)
+      {
+         Console.Write($"{matrix[i, j],5} ");
+      }
+      Console.WriteLine();
+   }
+}
+int[] FindMinPosition(int[,] matrix)
+{
+   int min = matrix[0, 0];
+   int position1 = 0;
+   int position2 = 0;
+   for (int i = 0; i < matrix.GetLength(0); i++)
+   {
+      for (int j = 0; j <matrix.GetLength(1); j++)
+      {
+         if (matrix[i,j]<min) 
+         {
+            min = matrix[i, j];
+            position1 = i;
+            position2 = j;
+         }
+      }
+   }
+   return new int[]{position1,position2,min};
+}
+int[,] CreateNewMatrix(int[,] matrix,int row, int column)
+{
+   int size1 = matrix.GetLength(0)-1;
+   int size2 = matrix.GetLength(1)-1;
+   int[,] newMatrix = new int[size1, size2];
+   int m = 0;
+   int n = 0;
+   for (int i = 0; i < newMatrix.GetLength(0); i++)
+   {
+      if (m==row) m+=1;
+      for (int j = 0; j < newMatrix.GetLength(1); j++)
+      {
+         if (n==column) n+=1;
+         newMatrix[i, j] = matrix[m, n];
+         n++;
+      }
+      n = 0; //обнуление после каждой строки
+      m++;
+   }
+   return newMatrix;
+
 }
 
-void PrintArray(double[] arr)
-{
-    for (int i = 0; i < arr.Length; i++)
-    {
-        double round = Math.Round(arr[i], 1);
-       if (i < arr.Length - 1) Console.Write($"{round}, ");
-        else Console.Write($"{round}");
-    }
-}
-
-double FindMax(double[] arr)
-{
-    double max = arr[0];
-    for (int i = 1; i < arr.Length; i++)
-    {
-        if(arr[i] > max) max = arr[i];
-    }
-    return max;
-}
-
-double FindMin(double[] arr)
-{
-    double min = arr[0];
-    for (int i = 1; i < arr.Length; i++)
-    {
-        if(arr[i] < min) min = arr[i];
-    }
-    return min;
-}
-
-double MaxMinusMin(double max, double min)
-{
-   double diff = max - min;
-   return diff;
-}
-
-double[] array = CreateArrayRnd(5, -100, 100);
-Console.Write("[");
-PrintArray(array);
-Console.Write("]");
+int[,] matrix = CreateMatrixRndInt(4, 4, -10, 10);
+PrintMatrix(matrix);
 Console.WriteLine();
-
-double maximum = FindMax(array);
-double minimum = FindMin(array);
-double maxMinusMin = MaxMinusMin(maximum, minimum);
-Console.WriteLine($"Max element {Math.Round(maximum, 1)} minus min {Math.Round(minimum, 1)} element is {Math.Round(maxMinusMin, 1)}");
-
+int[] pos = FindMinPosition(matrix);
+int min = pos[2];
+int[,] newMatrix = CreateNewMatrix(matrix, pos[0],pos[1]);
+Console.WriteLine(min);
+Console.WriteLine();
+PrintMatrix(newMatrix);
