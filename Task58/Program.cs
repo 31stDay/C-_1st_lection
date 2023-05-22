@@ -37,32 +37,53 @@ void PrintMatrix(int[,] matrix)
 
 bool CheckMatrices(int[,] matrix1, int[,] matrix2)
 {
-    return matrix1.GetLength(1) == matrix2.GetLength(0);
+    return matrix1.GetLength(1) == matrix2.GetLength(0) || matrix2.GetLength(1) == matrix1.GetLength(0);
 }
 
 int[,] MatrixMultiplication(int[,] matrix1, int[,] matrix2)
 {
-    int[,] matrix = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
-    for (int i = 0; i < matrix1.GetLength(0); i++)
+
+    if (matrix1.GetLength(1) == matrix2.GetLength(0))
     {
-        for (int j = 0; j < matrix2.GetLength(1); j++)
+        int[,] matrix = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
+
+        for (int i = 0; i < matrix1.GetLength(0); i++)
         {
-            for (int k = 0; k < matrix1.GetLength(1); k++)
+            for (int j = 0; j < matrix2.GetLength(1); j++)
             {
-                matrix[i, j] = matrix[i, j] + matrix1[i, k] * matrix2[k, j];
+                for (int k = 0; k < matrix1.GetLength(1); k++)
+                {
+                    matrix[i, j] = matrix[i, j] + matrix1[i, k] * matrix2[k, j];
+                }
             }
         }
+        return matrix;
     }
-    return matrix;
+    else
+    {
+        int[,] matrix = new int[matrix2.GetLength(0), matrix1.GetLength(1)];
+
+        for (int i = 0; i < matrix2.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix1.GetLength(1); j++)
+            {
+                for (int k = 0; k < matrix2.GetLength(1); k++)
+                {
+                    matrix[i, j] = matrix[i, j] + matrix2[i, k] * matrix1[k, j];
+                }
+            }
+        }
+        return matrix;
+    }
 }
 
 
 
-int[,] matr1 = CreateMatrix(rows: 4, columns: 2, min: 1, max: 10);
+int[,] matr1 = CreateMatrix(rows: 2, columns: 3, min: 1, max: 10);
 PrintMatrix(matr1);
 Console.WriteLine();
 
-int[,] matr2 = CreateMatrix(rows: 2, columns: 3, min: 1, max: 10);
+int[,] matr2 = CreateMatrix(rows: 4, columns: 2, min: 1, max: 10);
 Console.WriteLine();
 PrintMatrix(matr2);
 Console.WriteLine();
