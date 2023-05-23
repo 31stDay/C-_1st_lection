@@ -6,7 +6,7 @@
 // Результирующая матрица будет:
 // 18 20
 // 15 18
-
+// test
 
 int[,] CreateMatrix(int rows, int columns, int min, int max)
 {
