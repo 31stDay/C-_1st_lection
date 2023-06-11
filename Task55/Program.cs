@@ -59,8 +59,8 @@ bool checkTheMatrix = CheckTheMatrix(matr);
 Console.WriteLine();
 if (CheckTheMatrix(matr))
 {
-   ChangePosition(matrix);
-   PrintMatrix(matrix);
+   SwapMatrix(matr);
+   PrintMatrix(matr);
 }
 else
 {

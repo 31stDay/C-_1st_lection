@@ -4,6 +4,11 @@
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
+bool CheckNumbers(int num)
+{
+    return num < 0;
+}
+
 void DisplayNumbers(int num)
 {
     if(num == 0) return;
@@ -14,4 +19,11 @@ void DisplayNumbers(int num)
 Console.WriteLine("Please enter your number: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-DisplayNumbers(number);
+if (CheckNumbers(number))
+{
+    Console.WriteLine("Error!");
+}
+else
+{ 
+    DisplayNumbers(number);
+}
